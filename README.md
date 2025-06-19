@@ -4,13 +4,6 @@ This is a multi-page frontend web project built using **HTML**, **CSS**, and **J
 
 ---
 
-## 🔗 Live Demo
-
-> [Visit Live Site](#)  
-> _(Note: Loader and Navbar might not appear due to deployment routing issues – see Notes below)_
-
----
-
 ## 🚀 Features
 
 - ✅ **Animated Loader** before page transitions
@@ -46,18 +39,6 @@ This is a multi-page frontend web project built using **HTML**, **CSS**, and **J
 - Loader and navbar are hidden unless JS triggers them via controlled navigation.
 - Deep linking to `/about.html` or `/parallax.html` may skip the loader.
 - Font Awesome requires internet access to load icons.
-
----
-
-## 🛠️ Setup & Deployment
-
-1. Clone or download the repo
-2. Add your profile image to the correct path or host it externally
-3. Replace social media `href="#"` links in `about.html`
-4. Deploy via GitHub Pages, Vercel, or Netlify
-
-> Ensure your folder structure supports static file routing  
-> (_e.g., use `404.html` fallback for client-side routing if needed_)
 
 ---
 
