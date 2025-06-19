@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #0a4c8b, #001f3f);
   color: white;
   min-height: 100vh;
@@ -31,29 +31,39 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
+  gap: 1.2rem;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  opacity: 1;
+}
+
+.ratings span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.star {
+  color: gold;
 }
 
 /* Headline */
 .headline {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
 @media (min-width: 768px) {
   .headline {
-    font-size: 3.5rem;
+    font-size: 3.6rem;
   }
 }
 
 /* Subheadline */
 .subheadline {
-  font-size: 1.2rem;
-  margin: 1rem 0 2rem;
+  font-size: 1.25rem;
+  margin: 1.2rem 0 2rem;
   font-weight: 500;
 }
 
@@ -67,29 +77,136 @@ body {
 }
 
 .button {
-  background-color: #56b1f5;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  font-weight: bold;
+  background: linear-gradient(to right, #d1f3f9, #a6dff1);
+  color: #004066;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .button:hover {
-  background-color: #3c9cdb;
+  transform: scale(1.03);
+}
+
+
+.button:hover {
+  background: linear-gradient(to right, #44a6e0, #2475c6);
 }
 
 .secondary {
-  color: white;
+  color: #dbeaff;
   text-decoration: underline;
   font-size: 0.95rem;
 }
+.secondary .icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
 
 /* Background Floating Placeholder */
 .background-elements {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* You can use background images, SVGs, or animations here later */
+  overflow: hidden;
 }
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.25;
+}
+
+.blob.one {
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  top: 10%;
+  left: 10%;
+}
+
+.blob.two {
+  width: 300px;
+  height: 300px;
+  background: #f56a6a;
+  bottom: 5%;
+  right: 10%;
+}
+.floating-box {
+  position: absolute;
+  width: 180px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0.2;
+  transform: translateY(0);
+  animation: float 4s ease-in-out infinite;
+  transition: opacity 0.4s ease, transform 0.4s ease, z-index 0.4s;
+  z-index: 0;
+}
+
+/* Sample floating motion */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Active state on hover trigger */
+.floating-box.active {
+  background: red !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
+  transform: scale(1.2) translateY(-20px) !important;
+}
+
+
+
+/* Manual positions (fixed per group) */
+.group-reports:nth-child(3) { top: 20%; left: 10%; }
+.group-reports:nth-child(4) { top: 30%; left: 40%; }
+.group-reports:nth-child(5) { top: 50%; left: 20%; }
+.group-reports:nth-child(6) { top: 40%; left: 60%; }
+
+.group-dashboards:nth-child(7) { top: 25%; left: 25%; }
+.group-dashboards:nth-child(8) { top: 40%; left: 50%; }
+.group-dashboards:nth-child(9) { top: 55%; left: 30%; }
+
+/* Add similar position rules for forecasts/consolidations as needed */
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0e2c4f;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 50;
+  transition: transform 0.2s ease;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon img {
+  width: 32px;
+  height: 32px;
+}
+
